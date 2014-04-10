@@ -1,0 +1,4 @@
+cercleTrigoSlider
+=================
+
+Slider circulaire
