@@ -190,23 +190,6 @@ for($i=0;$i<$nbMiniatures;$i++){
                 $( document ).ready(function(){
                     
                     $("#centre").cercleTrigoSlider();
-                    //test();
-                    $(".trigo-slider").hover(function(){
-                        hover = true;
-                        $("#trigo-slider-haut").html($(this).attr("data-title"));
-                        $("#trigo-slider-bas").html($(this).attr("data-description"));
-                        $("#trigo-slider-description").stop(true, true).fadeIn();
-                    }, function(){
-                        hover = false;
-                        $("#trigo-slider-description").stop(true, true).fadeOut();
-                    });
-                    
-                    $(".trigo-slider-miniature").click(function(){
-                        gotoSlide($(".trigo-slider-miniature").index(this));
-                    });
-                    
-                    
-                    
                 });
 	</script>
                 <div id="centre">
