@@ -1,0 +1,28 @@
+div.round {
+    float: left;
+    height: 310px;
+    margin: 50px;
+    position: relative;
+    width: 310px;
+}
+
+
+div.round input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    font-size: 60px;
+    left: 50px;
+    outline: medium none;
+    position: absolute;
+    text-align: center;
+    top: 60px;
+    width: 400px;
+}
+
+div.round canvas{
+    position : absolute;
+    top : 0px;
+    right : 0px;
+    bottom : 0px;
+    left : 0px;
+}
