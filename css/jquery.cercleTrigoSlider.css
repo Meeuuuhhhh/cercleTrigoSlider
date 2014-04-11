@@ -1,0 +1,61 @@
+/*
+CSS file for cercleTrigoSlider jquery plugin
+*/
+/* 
+    Created on : 11 avr. 2014, 12:54:39
+    Author     : Ollivier Tristan
+*/
+
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+.trigo-slider-miniature{
+    position : absolute;
+    overflow:hidden;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    z-index : 1004;
+}
+#centre{
+    z-index : 1006;
+    text-align : center;
+    position : absolute;
+    overflow:hidden;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    color : white;
+}
+#centre img{
+    display : none;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}
+#trigo-slider-description{
+    display : none;
+    opacity : 0.92;
+    position : absolute ;
+    background-color : #FFFFFF;
+    top : 0px;
+    left : 0px;
+    z-index : 1005;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}
+#trigo-slider-haut,#trigo-slider-bas{
+    padding : 0 10px 10px 0;
+    text-align : center;
+    text-align :center;
+    color : #000000;
+}
+#trigo-slider-haut{
+    font-size : 28px;
+    position : absolute;
+}
+#trigo-slider-bas{
+    position : absolute;
+    bottom : 0px;
+}

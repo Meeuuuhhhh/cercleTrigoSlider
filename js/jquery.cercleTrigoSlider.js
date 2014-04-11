@@ -1,3 +1,11 @@
+/*
+JS file for cercleTrigoSlider jquery plugin
+*/
+/* 
+    Created on : 11 avr. 2014, 12:56
+    Author     : Ollivier Tristan
+*/
+
 (function($)
 {
     
@@ -26,6 +34,9 @@
     
     $.init = function(divPrincipale){
 
+        //ON DECALE L'IMAGE CENTRALE
+        divPrincipale.css('top',margeTotal).css('left',margeTotal).css('width',diametreCercleCentral).css('height',diametreCercleCentral);
+
         //ON RECUPERE LES IMAGES
         var $images = divPrincipale.children("img");
 
@@ -41,13 +52,17 @@
 
             positionLeft = (Math.cos(trigStart)*k)+K-rayonCercleMiniature;
             positionTop = (Math.sin(trigStart)*k)+K-rayonCercleMiniature;
-            divPrincipale.before('<a class="lienMiniature" href="javascript:void(0)"><img class="trigo-slider-miniature" src="'+$(this).attr("src")+'" style="position: absolute;left:'+positionLeft+'px;top:'+positionTop+'px;" /></a>');
+            divPrincipale.before('<a class="lienMiniature" href="javascript:void(0)"><img class="trigo-slider-miniature" src="'+$(this).attr("src")+'" style="width : '+diametreCercleMiniature+'px;height : '+diametreCercleMiniature+'px;position: absolute;left:'+positionLeft+'px;top:'+positionTop+'px;" /></a>');
 
             trigStart += (2*Math.PI)/nbImages;
         });
 
         //DIV POUR LA DESCRIPTION ET LE TITRE
         divPrincipale.before('<div id="trigo-slider-description"><div id="trigo-slider-haut"></div><div id="trigo-slider-bas"></div></div>');
+
+        $("#trigo-slider-description").css("width",(diametreCercleMiniature+marge)*2+diametreCercleCentral).css("height",(diametreCercleMiniature+marge)*2+diametreCercleCentral);
+        $("#trigo-slider-haut").css("width",(diametreCercleMiniature+marge)*2+diametreCercleCentral).css("height",diametreCercleMiniature*2/3).css("top", marge);
+        $("#trigo-slider-bas").css("width",(diametreCercleMiniature+marge)*2+diametreCercleCentral).css("height",diametreCercleMiniature*2/3);
 
         //L'INPUT POUR LA BARRE DE CHARGEMENT
         divPrincipale.before('<input type="text" name="round" class="round"/>');
@@ -83,6 +98,11 @@
             ctx2.lineWidth = 5;
             ctx2.strokeStyle = color;
             ctx2.stroke();
+
+            //SI DANS LA LISTE RIEN N'EST AFFICHER, ON AFFICHE LE PREMIER
+            if($(".trigo-slider:visible").length == 0){
+                $(".trigo-slider").eq(0).show();
+            }
 
             $.remplirCercle();
 
