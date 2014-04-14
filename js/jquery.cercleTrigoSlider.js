@@ -9,7 +9,6 @@ JS file for cercleTrigoSlider jquery plugin
 (function($)
 {
     
-    var timer = new Object;
     var ctx2;
     var ctx1;
     var ratio = 0;
@@ -24,11 +23,20 @@ JS file for cercleTrigoSlider jquery plugin
     var diametreCercleMiniature = rayonCercleMiniature*2;
     var marge = 10;
     var margeTotal = diametreCercleMiniature+marge;
-    
+        
     //MON PLUG IN
-    $.fn.cercleTrigoSlider = function(options)
+    $.fn.cercleTrigoSlider = function(methodOrOptions)
     {
-        $.init($(this));
+        
+        if ( $[methodOrOptions] ) {
+            return $[ methodOrOptions ]( Array.prototype.slice.call( arguments, 1 ) );
+        } else if ( typeof methodOrOptions === 'object' || ! methodOrOptions ) {
+            // Default to "init"
+            return $["init"]( $(this) );
+        } else {
+            $.error( 'Method ' +  methodOrOptions + ' does not exist on jQuery.tooltip' );
+        }  
+        
         return this;
     };
     
@@ -132,10 +140,11 @@ JS file for cercleTrigoSlider jquery plugin
             next = $(".trigo-slider:visible").next();
         }
 
-        $(".trigo-slider:visible").stop(true, true).fadeOut("normal");
+        $(".trigo-slider:visible").stop(true, true).fadeOut("fast");
         next.stop(true, true).fadeIn("normal");
         $.restartCercle();
     };
+    
     $.restartCercle = function(){
              //ON INVRSE LES COULEURS
             colorIntermediaire = color;
