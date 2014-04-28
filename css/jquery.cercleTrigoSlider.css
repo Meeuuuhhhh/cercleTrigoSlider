@@ -6,6 +6,14 @@ CSS file for cercleTrigoSlider jquery plugin
     Author     : Ollivier Tristan
 */
 
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.spacer{
+    clear:both;
+}
+
 .trigo-slider-miniature{
     position : absolute;
     overflow:hidden;
@@ -29,6 +37,7 @@ CSS file for cercleTrigoSlider jquery plugin
     -webkit-border-radius:50%;
     -moz-border-radius:50%;
     border-radius:50%;
+    z-index : 1007;
 }
 #trigo-slider-description{
     display : none;
@@ -37,16 +46,16 @@ CSS file for cercleTrigoSlider jquery plugin
     background-color : #FFFFFF;
     top : 0px;
     left : 0px;
-    z-index : 1005;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    border-radius:50%;
+    z-index : 1006;
 }
 #trigo-slider-haut,#trigo-slider-bas{
     padding : 0 10px 10px 0;
     text-align : center;
     text-align :center;
     color : #000000;
+    opacity : 0.92;
+    background-color : #FFFFFF;
+    z-index : 1008;
 }
 #trigo-slider-haut{
     font-size : 28px;
@@ -54,7 +63,6 @@ CSS file for cercleTrigoSlider jquery plugin
 }
 #trigo-slider-bas{
     position : absolute;
-    bottom : 0px;
 }
 
 div.round {

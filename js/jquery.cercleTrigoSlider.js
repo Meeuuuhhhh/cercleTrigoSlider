@@ -58,6 +58,7 @@ JS file for cercleTrigoSlider jquery plugin
         //ON CREE LES MINIATURES
         $images.each(function() {
 
+            $(this).addClass("trigo-slider");
             positionLeft = (Math.cos(trigStart)*k)+K-rayonCercleMiniature;
             positionTop = (Math.sin(trigStart)*k)+K-rayonCercleMiniature;
             divPrincipale.before('<a class="lienMiniature" href="javascript:void(0)"><img class="trigo-slider-miniature" src="'+$(this).attr("src")+'" style="width : '+diametreCercleMiniature+'px;height : '+diametreCercleMiniature+'px;position: absolute;left:'+positionLeft+'px;top:'+positionTop+'px;" /></a>');
@@ -70,7 +71,7 @@ JS file for cercleTrigoSlider jquery plugin
 
         $("#trigo-slider-description").css("width",(diametreCercleMiniature+marge)*2+diametreCercleCentral).css("height",(diametreCercleMiniature+marge)*2+diametreCercleCentral);
         $("#trigo-slider-haut").css("width",(diametreCercleMiniature+marge)*2+diametreCercleCentral).css("height",diametreCercleMiniature*2/3).css("top", marge);
-        $("#trigo-slider-bas").css("width",(diametreCercleMiniature+marge)*2+diametreCercleCentral).css("height",diametreCercleMiniature*2/3);
+        $("#trigo-slider-bas").css("width",(diametreCercleMiniature+marge)*2+diametreCercleCentral).css("top", diametreCercleMiniature+diametreCercleCentral+marge+10)
 
         //L'INPUT POUR LA BARRE DE CHARGEMENT
         divPrincipale.before('<input type="text" name="round" class="round"/>');
